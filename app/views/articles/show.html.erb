@@ -1,0 +1,19 @@
+<div class="card m-6">
+  <header class="card-header">
+    <p class="card-header-title">
+      <%= @article.title %>
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <%= @article.body %>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <div class="card-footer-item button is-primary"><%= link_to "Go Back", articles_path %></div>
+    <!-- One way to make a link -->
+    <a href="<%= edit_article_path(@article) %>" class="button is-success">Edit</a>
+    <!-- A more erb way to make a link -->
+    <div class="card-footer-item button is-danger"><%= link_to "Destroy", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %></div>
+  </footer>
+</div>

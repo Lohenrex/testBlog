@@ -1,9 +1,28 @@
-<h1>Articles</h1>
+<div class="box m-6">
+  <div class="content">
+    <div class="title is-2 has-text-info">Articles!</div>
+  </div>
+</div>
 
-<ul>
-	<% @articles.each do |article| %>
-		<li>
-			<%= article.title %>
-		</li>
-	<% end %>
-</ul>
+<div class="is-block">
+	<a href="<%= new_article_url %>" class="button is-success">New article</a>
+</div>
+
+<table class="table m-6">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Updated at</th>
+      <th>Created at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+			<tr>
+				<td><%= link_to article.title, article %></td>
+				<td><%= article.updated_at %></td>
+				<td><%= article.created_at %></td>
+			</tr>
+		<% end %>
+  </tbody>
+</table>
