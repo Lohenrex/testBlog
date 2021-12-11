@@ -1,43 +1,35 @@
 <div class="card m-6">
-  <header class="card-header">
-    <p class="card-header-title">
-      <%= @article.title %>
-    </p>
-  </header>
+  <a href="<%= articles_path %>" class="button is-primary">Go Back</a>
   <div class="card-content">
     <div class="content">
-      <%= @article.body %>
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+          <div class="tile">
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-primary">
+                <p class="title">Comments</p>
+                <%= render @article.comments %>
+              </article>
+              <article class="tile is-child notification is-success">
+                <p class="title">Add a comment</p>
+                <%= render 'comments/form' %>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-dark">
+                <p class="title"><%= @article.title %></p>
+                <p class="subtitle"><%= @article.body %></p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <footer class="card-footer">
-    <div class="card-footer-item button is-primary"><%= link_to "Go Back", articles_path %></div>
     <!-- One way to make a link -->
     <a href="<%= edit_article_path(@article) %>" class="button is-success">Edit</a>
     <!-- A more erb way to make a link -->
-    <div class="card-footer-item button is-danger"><%= link_to "Destroy", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %></div>
+    <%= link_to "Destroy", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
   </footer>
 </div>
-
-<h2>Comments</h2>
-<% @article.comments.each do |comment| %>
-  <p>
-    <strong><%= comment.commenter %></strong>
-    <%= comment.body %>    
-  </p>
-<% end %>
-
-<h2>Add a comment:</h2>
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
-

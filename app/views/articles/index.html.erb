@@ -1,6 +1,7 @@
 <div class="box m-6">
   <div class="content">
     <div class="title is-2 has-text-info">Articles!</div>
+    <div class="subtitle is-4 has-text-dark">Our blog has <%= Article.public_count %> articles and counting!</div>
   </div>
 </div>
 
@@ -12,17 +13,23 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Status</th>
       <th>Updated at</th>
       <th>Created at</th>
     </tr>
   </thead>
   <tbody>
     <% @articles.each do |article| %>
-			<tr>
-				<td><%= link_to article.title, article %></td>
-				<td><%= article.updated_at %></td>
-				<td><%= article.created_at %></td>
-			</tr>
+      <% unless article.archived? %>
+  			<tr>
+  				<td><%= link_to article.title, article %></td>
+          <td>
+            <button class="button is-outlined is-small <%= article.status_color %>"><%= article.status %></button>
+          </td>
+          <td><%= article.updated_at %></td>
+  				<td><%= article.created_at %></td>
+  			</tr>
+      <% end %>
 		<% end %>
   </tbody>
 </table>
