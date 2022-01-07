@@ -1,7 +1,12 @@
-# README
+# blogTest
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is just an implementation of a simple blog following the guides at [railsGuides](https://guides.rubyonrails.org/getting_started.html)
+
+u:zam
+p:aramzamzam
+
+rails 7
+ruby 3
 
 Things you may want to cover:
 
