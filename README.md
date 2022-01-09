@@ -1,29 +1,21 @@
 # blogTest
 
-This app is just an implementation of a simple blog following the guides at [railsGuides](https://guides.rubyonrails.org/getting_started.html)
+This app is just an implementation of a simple blog following the guides at [railsGuides](https://guides.rubyonrails.org/getting_started.html).
 
-u:zam
-p:aramzamzam
+### Authentication
 
-rails 7
-ruby 3
+Http basic authentication was implemented according to the guide, however, the user and password were changed.
 
-Things you may want to cover:
+* **user: zam**
+* **password: aramzamzam**
 
-* Ruby version
+### Versions
 
-* System dependencies
+* Ruby version: 3.0.3
+* Rails version: 7.0.1
 
-* Configuration
+### Database
 
-* Database creation
+* DB: postgreSQL
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**IMPORTANT: To avoid having passwords and users in plain text, the [figaro](https://github.com/laserlemon/figaro) gem was used.**
