@@ -1,24 +1,14 @@
-# README
+# blogTest
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is just an implementation of a simple blog following the guides at [railsGuides](https://guides.rubyonrails.org/getting_started.html).
 
-Things you may want to cover:
+### Versions
 
-* Ruby version
+* Ruby version: 3.0.3
+* Rails version: 6.1.4.1
 
-* System dependencies
+### Database
 
-* Configuration
+* DB: postgreSQL
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**IMPORTANT: To avoid having passwords and users in plain text, the [figaro](https://github.com/laserlemon/figaro) gem was used.**
